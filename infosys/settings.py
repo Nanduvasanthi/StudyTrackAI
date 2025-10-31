@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
-
+from dotenv import load_dotenv
+import ssl
 
 # ---------------------------
 # Base directory
@@ -8,10 +9,15 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ---------------------------
+# Load environment variables
+# ---------------------------
+load_dotenv(BASE_DIR / '.env')
+
+# ---------------------------
 # Security
 # ---------------------------
-SECRET_KEY = 'django-insecure-&m94@wmb5qrqy$rj1v@8y*d5c_g2!@9jl5422xs10vjqup8rv2'
-DEBUG = True
+SECRET_KEY = os.getenv('SECRET_KEY')
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # ---------------------------
@@ -80,11 +86,11 @@ WSGI_APPLICATION = 'infosys.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'studytrack',
-        'USER': 'root',
-        'PASSWORD': 'Nandu@2005',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
@@ -119,7 +125,7 @@ USE_TZ = True
 # Static & Media
 # ---------------------------
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'ui' / 'static']  
+STATICFILES_DIRS = [BASE_DIR / 'ui' / 'static']
 os.makedirs(BASE_DIR / 'ui' / 'static', exist_ok=True)
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
@@ -153,12 +159,12 @@ EMAIL_BACKEND = 'ui.email_backend.CustomEmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'studytrack.platform@gmail.com'
-EMAIL_HOST_PASSWORD = 'vcvq daws dnqz vxnh'
-DEFAULT_FROM_EMAIL = 'studytrack.platform@gmail.com'
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = os.getenv('EMAIL_HOST_USER')
 SITE_URL = 'http://localhost:8000'
 
-import ssl
+# Avoid SSL verification (optional for local dev)
 ssl._create_default_https_context = ssl._create_unverified_context
 
 # ---------------------------
@@ -168,7 +174,7 @@ COURSE_NOTIFICATION_TIMES = ['morning', 'afternoon', 'evening']
 COURSE_COMPLETION_THRESHOLD = 75
 NOTIFICATION_TIME_SLOTS = {
     'morning': '08:00',
-    'afternoon': '13:00', 
+    'afternoon': '13:00',
     'evening': '18:00'
 }
 
@@ -188,7 +194,7 @@ CELERY_BEAT_SCHEDULE = {
         'schedule': 60.0,
     },
     'send-afternoon-reminders': {
-        'task': 'ui.tasks.send_afternoon_reminders', 
+        'task': 'ui.tasks.send_afternoon_reminders',
         'schedule': 60.0,
     },
     'send-evening-reminders': {
@@ -197,10 +203,10 @@ CELERY_BEAT_SCHEDULE = {
     },
     'send-daily-quiz-reminders': {
         'task': 'ui.tasks.send_daily_quiz_reminders_task',
-        'schedule': 86400.0,  # Once per day (24 hours)
+        'schedule': 86400.0,
     },
     'send-weekly-quiz-summary': {
-        'task': 'ui.tasks.send_weekly_quiz_summary_task', 
-        'schedule': 604800.0,  # Once per week (7 days)
+        'task': 'ui.tasks.send_weekly_quiz_summary_task',
+        'schedule': 604800.0,
     },
 }

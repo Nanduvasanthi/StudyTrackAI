@@ -85,14 +85,14 @@ try:
             )
             self.scheduler.add_job(
                 lambda: self.send_course_reminders('evening'),
-                CronTrigger(hour=17, minute=12s),
+                CronTrigger(hour=7, minute=0),
                 id='evening_courses'
             )
             
             # QUIZ REMINDERS (1x daily)
             self.scheduler.add_job(
                 lambda: self.send_quiz_reminders('daily'),
-                CronTrigger(hour=17, minute=13),  # 5 minutes after course reminders
+                CronTrigger(hour=14, minute=58),  # 5 minutes after course reminders
                 id='daily_quizzes'
             )
             
