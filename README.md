@@ -41,7 +41,7 @@ A smart study tracking platform that helps students monitor their study progress
 
 ### AI-Powered Notifications
 
-<div align="center"> <table> <tr> <td align="center" width="50%"> <strong>Email Notifications</strong><br> <img width="1661" height="506" alt="Email Notifications" src="https://github.com/user-attachments/assets/a01316bd-7b31-4349-9a7d-8ad4d23ce33a" /> </td> <td align="center" width="50%"> <strong>Pop-up Alerts</strong><br> <img width="1564" height="790" alt="Pop-up Alerts" src="https://github.com/user-attachments/assets/70729646-c364-4f8e-b3e2-60c4a6bb1157" /> </td> </tr> </table> <p><em>Smart email reminders and real-time pop-up notifications for course completion</em></p> </div>
+<div align="center"> <table> <tr> <td align="center" width="50%"> <strong>Pop-up Alerts </strong><br> <img width="1661" height="506" alt="Email Notifications" src="https://github.com/user-attachments/assets/a01316bd-7b31-4349-9a7d-8ad4d23ce33a" /> </td> <td align="center" width="50%"> <strong>Email Notifications</strong><br> <img width="1564" height="790" alt="Pop-up Alerts" src="https://github.com/user-attachments/assets/70729646-c364-4f8e-b3e2-60c4a6bb1157" /> </td> </tr> </table> <p><em>Smart email reminders and real-time pop-up notifications for course completion</em></p> </div>
 
 ### User Profile & Settings
 
@@ -155,6 +155,7 @@ celery -A studytrack beat -l info
 This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
 
 [ Download StudyTrack Presentation](./StudyTrack.pptx)
+
 
 
 
