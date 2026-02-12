@@ -26,6 +26,26 @@ A smart study tracking platform that helps students monitor their study progress
  **Real-time Progress Tracking**: Live updates on course completion percentages  
  **User-specific Data**: Each user sees only their own study tracks and courses  
 
+### Screenshots
+
+### Authentication & User Management
+<div align="center"> <table> <tr> <td align="center" width="50%"> <strong>Login Page</strong><br> <img width="840" height="692" alt="Login Page" src="https://github.com/user-attachments/assets/4dcf1369-8e49-4982-b8a2-1682e31d1029" /> </td> <td align="center" width="50%"> <strong>Registration Page</strong><br> <img width="480" height="788" alt="Registration Page" src="https://github.com/user-attachments/assets/e058da92-27a0-46a4-bf4a-676011f9c16f" /> </td> </tr> </table> <p><em>Secure student authentication system with login and registration</em></p> </div>
+
+### Student Dashboard & Study Tracking
+
+<div align="center"> <img width="1897" height="865" alt="Student Dashboard" src="https://github.com/user-attachments/assets/9f4f8956-9a95-4590-83af-8489c2b93d37" /> <p><em>Personalized dashboard with real-time progress tracking</em></p> </div>
+
+### Multi-Course Support & Analytics
+
+<div align="center"> <table> <tr> <td align="center" width="50%"> <strong>My Courses</strong><br> <img width="1919" height="859" alt="My Courses" src="https://github.com/user-attachments/assets/09c23779-23a4-4151-a038-f50c49ae61b9" /> </td> <td align="center" width="50%"> <strong>Progress Analytics</strong><br> <img width="1916" height="860" alt="Progress Analytics" src="https://github.com/user-attachments/assets/f65b2125-00e6-4850-b1ee-9e52b95c9fba" /> </td> </tr> </table> <p><em>Support for multiple courses with detailed progress analytics</em></p> </div>
+
+### AI-Powered Notifications
+
+<div align="center"> <table> <tr> <td align="center" width="50%"> <strong>Email Notifications</strong><br> <img width="1661" height="506" alt="Email Notifications" src="https://github.com/user-attachments/assets/a01316bd-7b31-4349-9a7d-8ad4d23ce33a" /> </td> <td align="center" width="50%"> <strong>Pop-up Alerts</strong><br> <img width="1564" height="790" alt="Pop-up Alerts" src="https://github.com/user-attachments/assets/70729646-c364-4f8e-b3e2-60c4a6bb1157" /> </td> </tr> </table> <p><em>Smart email reminders and real-time pop-up notifications for course completion</em></p> </div>
+
+### User Profile & Settings
+
+<div align="center"> <img width="1907" height="872" alt="User Profile" src="https://github.com/user-attachments/assets/9754753d-68c9-4173-b643-f08bae1d8716" /> <p><em>User profile management and notification preferences</em></p> </div>
 
 
 ##  Technologies Used
@@ -135,6 +155,7 @@ celery -A studytrack beat -l info
 This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
 
 [ Download StudyTrack Presentation](./StudyTrack.pptx)
+
 
 
 
