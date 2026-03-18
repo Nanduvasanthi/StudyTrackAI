@@ -80,12 +80,12 @@ try:
             )
             self.scheduler.add_job(
                 lambda: self.send_course_reminders('afternoon'),
-                CronTrigger(hour=2, minute=0),
+                CronTrigger(hour=14, minute=0),
                 id='afternoon_courses'
             )
             self.scheduler.add_job(
                 lambda: self.send_course_reminders('evening'),
-                CronTrigger(hour=7, minute=0),
+                CronTrigger(hour=19, minute=0),
                 id='evening_courses'
             )
             
